@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 390" role="img" aria-label="Animated GitHub and engineering activity dashboard">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1">
+    <stop offset="0" stop-color="#040612"/>
+    <stop offset=".6" stop-color="#0B1024"/>
+    <stop offset="1" stop-color="#180A29"/>
+  </linearGradient>
+  <linearGradient id="pulse" x1="0" x2="1">
+    <stop offset="0" stop-color="#8B5CF6"/>
+    <stop offset=".5" stop-color="#22D3EE"/>
+    <stop offset="1" stop-color="#F59E0B"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="1400" height="390" rx="28" fill="url(#bg)" stroke="#8B5CF6" stroke-opacity=".62"/>
+
+<text x="44" y="48" fill="#FFFFFF" font-family="monospace" font-size="20" font-weight="700">GITHUB / ENGINEERING ACTIVITY</text>
+<text x="44" y="70" fill="#22D3EE" font-family="monospace" font-size="10" letter-spacing="2">PROFILE SNAPSHOT</text>
+
+<!-- stat blocks -->
+<g font-family="monospace">
+  <rect x="44" y="95" width="170" height="86" rx="14" fill="#080D1B" stroke="#28324D"/>
+  <text x="66" y="133" fill="#8B5CF6" font-size="28" font-weight="700">18</text>
+  <text x="66" y="158" fill="#AAB4C8" font-size="10">PUBLIC REPOSITORIES</text>
+
+  <rect x="234" y="95" width="170" height="86" rx="14" fill="#080D1B" stroke="#28324D"/>
+  <text x="256" y="133" fill="#22D3EE" font-size="28" font-weight="700">26</text>
+  <text x="256" y="158" fill="#AAB4C8" font-size="10">FOLLOWERS</text>
+
+  <rect x="424" y="95" width="170" height="86" rx="14" fill="#080D1B" stroke="#28324D"/>
+  <text x="446" y="133" fill="#F59E0B" font-size="28" font-weight="700">44</text>
+  <text x="446" y="158" fill="#AAB4C8" font-size="10">FOLLOWING</text>
+
+  <rect x="614" y="95" width="170" height="86" rx="14" fill="#080D1B" stroke="#28324D"/>
+  <text x="636" y="133" fill="#8B5CF6" font-size="28" font-weight="700">1</text>
+  <text x="636" y="158" fill="#AAB4C8" font-size="10">STARS</text>
+</g>
+
+<!-- animated engineering line chart -->
+<g transform="translate(830 92)">
+  <rect width="526" height="214" rx="18" fill="#080D1B" stroke="#28324D"/>
+  <text x="24" y="32" fill="#FFFFFF" font-family="monospace" font-size="13" font-weight="700">ENGINEERING SIGNAL</text>
+  <text x="24" y="52" fill="#AAB4C8" font-family="monospace" font-size="9">BUILD • DEBUG • SHIP • REPEAT</text>
+
+  <path d="M24 174 L78 148 L125 164 L178 112 L226 142 L278 92 L326 126 L382 78 L432 102 L500 54"
+        fill="none" stroke="url(#pulse)" stroke-width="4" filter="url(#glow)"/>
+  <path d="M24 174 L78 148 L125 164 L178 112 L226 142 L278 92 L326 126 L382 78 L432 102 L500 54"
+        fill="none" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="1"/>
+
+  <circle r="7" fill="#F59E0B" filter="url(#glow)">
+    <animateMotion dur="3.2s" repeatCount="indefinite"
+      path="M24 174 L78 148 L125 164 L178 112 L226 142 L278 92 L326 126 L382 78 L432 102 L500 54"/>
+  </circle>
+
+  <g font-family="monospace" font-size="10">
+    <text x="24" y="198" fill="#8B5CF6">JAVA</text>
+    <text x="95" y="198" fill="#22D3EE">SPRING BOOT</text>
+    <text x="208" y="198" fill="#F59E0B">KAFKA</text>
+    <text x="278" y="198" fill="#8B5CF6">REDIS</text>
+    <text x="342" y="198" fill="#22D3EE">AI</text>
+    <text x="382" y="198" fill="#F59E0B">DOCKER</text>
+  </g>
+</g>
+
+<!-- activity pulses -->
+<g transform="translate(44 220)">
+  <text x="0" y="-14" fill="#AAB4C8" font-family="monospace" font-size="10">ACTIVITY PULSE</text>
+  <g fill="#11192D">
+    <rect x="0" y="0" width="22" height="22" rx="4"/><rect x="30" y="0" width="22" height="22" rx="4"/><rect x="60" y="0" width="22" height="22" rx="4"/><rect x="90" y="0" width="22" height="22" rx="4"/><rect x="120" y="0" width="22" height="22" rx="4"/><rect x="150" y="0" width="22" height="22" rx="4"/><rect x="180" y="0" width="22" height="22" rx="4"/><rect x="210" y="0" width="22" height="22" rx="4"/><rect x="240" y="0" width="22" height="22" rx="4"/>
+    <rect x="0" y="30" width="22" height="22" rx="4"/><rect x="30" y="30" width="22" height="22" rx="4"/><rect x="60" y="30" width="22" height="22" rx="4"/><rect x="90" y="30" width="22" height="22" rx="4"/><rect x="120" y="30" width="22" height="22" rx="4"/><rect x="150" y="30" width="22" height="22" rx="4"/><rect x="180" y="30" width="22" height="22" rx="4"/><rect x="210" y="30" width="22" height="22" rx="4"/><rect x="240" y="30" width="22" height="22" rx="4"/>
+  </g>
+  <rect x="30" y="30" width="22" height="22" rx="4" fill="#8B5CF6" filter="url(#glow)">
+    <animate attributeName="opacity" values=".25;1;.25" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="120" y="0" width="22" height="22" rx="4" fill="#22D3EE" filter="url(#glow)">
+    <animate attributeName="opacity" values=".25;1;.25" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="210" y="30" width="22" height="22" rx="4" fill="#F59E0B" filter="url(#glow)">
+    <animate attributeName="opacity" values=".25;1;.25" dur="2.1s" repeatCount="indefinite"/>
+  </rect>
+</g>
+
+<text x="44" y="350" fill="#FFFFFF" font-family="monospace" font-size="13">
+  Java • Spring Boot • Distributed Systems • AI • Event-Driven Architecture
+</text>
+</svg>
