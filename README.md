@@ -1,226 +1,156 @@
-# Maruthi Sreeram
- 
-Java backend engineer in progress. I build systems, break them on purpose, and write down what failed.
- 
-```diff
-+ target:  Java Backend Engineer / Software Development Engineer
-+ streak:  38 consecutive commit days (Sep 4 - Oct 11, 2026)
-```
- 
----
- 
-## /whoami
- 
-```yaml
-name:      Maruthi Sreeram
-role:      Java Backend Developer
-education: B.Tech Computer Science, class of 2027
-focus:     [backend engineering, distributed systems, microservices, event-driven architecture, AI integration]
- 
-stack:
-  language:   [Java, Python, JavaScript, TypeScript]
-  backend:    [Spring Boot, Spring Security, Spring Data JPA, Hibernate, Spring AI, Maven]
-  data:       [MySQL, PostgreSQL, MongoDB, Redis]
-  messaging:  [Kafka, RabbitMQ]
-  tooling:    [Docker, Git, Postman, Linux, IntelliJ IDEA]
-  frontend:   [React, Vite]
- 
-learning:  distributed systems, system design, scalable backend architecture
-principle: "Understand the system. Build it. Break it. Improve it."
-```
- 
----
- 
-## /registry
- 
-Four services, ordered by how hard they were to get right. Bars show relative difficulty.
- 
-```text
-distributed-kv-store   ##########  consensus has to stay correct while nodes fail
-careerflux             #########.  widest system: 12 backend modules, ingestion to matching
-nexus-ai               ########..  four roles, stock forecasting, an LLM with hard safety limits
-medicare-tracker       ######....  three services, role-based JWT, server-side dose logic
-```
- 
-| # | service | why it ranks here | stack | source |
-|---|---------|-------------------|-------|--------|
-| 1 | distributed-kv-store | Leader election, replicated logs and quorum commits must hold under node failure | Java, Spring Boot, Raft | TODO add repo link |
-| 2 | careerflux | Source intelligence, job ingestion with dedup, deterministic matching, security, migrations | Spring Boot, React, PostgreSQL, Kafka (optional), Spring AI | [careerFlux](https://github.com/maruthi-sreeram-p/careerFlux) |
-| 3 | nexus-ai | Four role-based workflows plus an AI layer that may explain prescriptions but never prescribe | Spring Boot 3, Spring Security, JWT, React, Gemini | [medcare-nexus-ai](https://github.com/maruthi-sreeram-p/medcare-nexus-ai) |
-| 4 | medicare-tracker | Prescription slots, dose status computed on the server, a separate AI service | Spring Boot, MySQL, React, FastAPI | [online-medication-and-prescription-tracker](https://github.com/maruthi-sreeram-p/online-medication-and-prescription-tracker) |
- 
----
- 
-## /services
- 
-<details open>
-<summary><b>01 &middot; distributed-kv-store</b> &mdash; consensus under failure</summary>
-**problem**
-A single-node store loses data when it crashes. This one replicates every write across nodes and keeps serving when a node dies.
- 
-**topology** (3-node example)
- 
-```text
-client --> leader --append--> log
-              |-----------> follower A --ack-->|
-              |-----------> follower B --ack-->|
-          majority ack  =>  commit  =>  apply to store
- 
-leader stops sending heartbeats  =>  follower times out  =>  election  =>  new leader
-```
- 
-**decision**
-A write is acknowledged only after a majority of nodes have it (quorum commit).
- 
-**trade-off**
-No majority, no progress. The store favors consistency over availability, so a partitioned minority stops accepting writes.
- 
-**run**
- 
-```bash
-# TODO add the command that starts the cluster
-```
- 
-**verify**
- 
-```text
-# TODO add the steps: kill the leader, show the election, show a write still replicating
-```
- 
-</details>
+<p align="center">
+<img src="./assets/hero.svg" alt="Maruthi Sreeram, Java backend developer." width="100%">
+<img src="./assets/marquee.svg" alt="Focus areas: distributed systems, microservices, event-driven architecture, system design, AI integration, secure APIs, root-cause debugging" width="100%">
+</p>
+
+<br>
+
+<p align="center"><img src="./assets/h-01.svg" alt="01 About" width="100%"></p>
+
+<p align="center">
+Every app has a hidden half: the servers that store your data, check who you are and keep running when something breaks.<br>
+<b>That hidden half is what I build.</b> Java and Spring Boot on the backend, B.Tech Computer Science, class of 2027,<br>
+aiming for a Software Development Engineer role.
+</p>
+
+<p align="center"><img src="./assets/about.svg" alt="Headline numbers, four strengths (distributed systems, debugging by method, secure by design, AI with guardrails) and my loop: understand, build, break, improve." width="100%"></p>
+
+<br>
+
+<p align="center"><img src="./assets/h-02.svg" alt="02 Tech stack" width="100%"></p>
+
+<p align="center"><img src="./assets/stack.svg" alt="Languages: Java, Python, JavaScript, TypeScript. Backend and security: Spring Boot, Spring Security, Hibernate, FastAPI, JWT. Data and messaging: MySQL, PostgreSQL, MongoDB, Redis, Kafka, RabbitMQ. Tooling: Docker, Git, GitHub, Postman, Linux, IntelliJ IDEA. Frontend: React, Vite. Currently learning distributed systems, system design and scalable systems." width="100%"></p>
+
+<br>
+
+<p align="center"><img src="./assets/h-03.svg" alt="03 Projects" width="100%"></p>
+
+<p align="center"><img src="./assets/proj-1.svg" alt="CareerFlux: job boards are ingested, cleaned and stored; a resume is read by optional AI and approved by a human; a deterministic matcher then ranks jobs with strengths and gaps." width="100%"></p>
+
+<p align="center">
+<a href="https://github.com/maruthi-sreeram-p/careerFlux"><b>Source code</b></a>
+&nbsp;·&nbsp;
+<a href="https://github.com/maruthi-sreeram-p/careerFlux/blob/main/docs/architecture.md">Architecture notes</a>
+</p>
+
 <details>
-<summary><b>02 &middot; careerflux</b> &mdash; widest system</summary>
-**problem**
-Job seekers cannot tell which employers matter for a target career, whether those sources may be read, or why a role fits. CareerFlux finds the sources, checks access policy, monitors them for change, and explains every match.
- 
-**topology**
- 
-```text
-ATS sources --> ingestion --> normalize --> dedupe --> enrich --> jobs
-                (optional Kafka bus)                                |
-resume --> AI extract --> proposals --> human review --> profile ---+
-                                                                    v
-                                    deterministic matcher (5 weighted sub-scores)
-                                                                    v
-                                         ranked jobs + strengths + gaps
-```
- 
-**decision**
-AI proposes, humans decide. Matching and eligibility stay in deterministic Java. AI is optional and falls back to rule-based logic when it is off.
- 
-**trade-off**
-A rule-based matcher adapts less than a learned ranker. In return, every score is explainable and testable.
- 
-**run**
- 
+<summary><b>Run CareerFlux</b> (Java 21, Maven 3.9, Node 20)</summary>
+
 ```bash
 export CAREERFLUX_JWT_SECRET="$(openssl rand -base64 48)"
-cd backend  && mvn spring-boot:run -Dspring-boot.run.profiles=dev,demo   # :8080
-cd frontend && npm install && npm run dev                                # :5173
+cd backend  && mvn spring-boot:run -Dspring-boot.run.profiles=dev,demo   # API on :8080
+cd frontend && npm install && npm run dev                                # UI  on :5173
 ```
- 
-**verify**
- 
-```bash
-cd backend && mvn test
-```
- 
-Design notes: `docs/architecture.md`
- 
+
+Run the test suite: `cd backend && mvn test`
+
 </details>
+
+<br>
+
+<p align="center"><img src="./assets/proj-2.svg" alt="Nexus AI: four roles use a React app; a Spring Boot API with Spring Security and JWT checks the role, talks to the database, and passes AI requests through an explain-only guardrail to Gemini." width="100%"></p>
+
+<p align="center">
+<a href="https://github.com/maruthi-sreeram-p/medcare-nexus-ai"><b>Source code</b></a>
+</p>
+
 <details>
-<summary><b>03 &middot; nexus-ai</b> &mdash; role-based healthcare platform with a guarded AI layer</summary>
-**problem**
-Medication adherence, prescriptions and pharmacy stock live in separate places, and AI help in healthcare needs hard limits. Nexus AI covers physicians, patients, pharmacy staff and admins in one platform, in six languages.
- 
-**topology**
- 
-```text
-React (Redux, MUI) --> Spring Boot (Spring Security 6, JWT)
-                           |-- JPA / Hibernate --> H2 | MySQL
-                           '-- GeminiAiService --> Google Gemini API
- 
-roles: physician | patient | pharmacy | admin
-```
- 
-**decision**
-The AI explains existing prescriptions only. It does not diagnose new conditions or change dosages.
- 
-**trade-off**
-A narrower assistant than an open-ended chatbot, in exchange for safe behavior in a medical setting.
- 
-**run**
- 
+<summary><b>Run Nexus AI</b> (Java 21, Node 20)</summary>
+
 ```bash
-cd backend  && mvn spring-boot:run     # :8088, Swagger UI at /swagger-ui.html
-cd frontend && npm install && npm run dev   # :3000
+cd backend  && mvn spring-boot:run          # API on :8088, Swagger UI at /swagger-ui.html
+cd frontend && npm install && npm run dev   # UI  on :3000
 ```
- 
-**verify**
-Open `http://localhost:8088/swagger-ui.html` and call the same endpoint as two different roles.
- 
+
+Open `http://localhost:8088/swagger-ui.html` and call the same endpoint as two different roles to see access control at work.
+
 </details>
+
+<br>
+
+<p align="center"><img src="./assets/proj-3.svg" alt="MediCare Tracker: a React app talks to a Spring Boot API backed by MySQL, plus a separate FastAPI service that calls an LLM. Dose status moves from upcoming to pending to on time, late or missed, decided by the server clock." width="100%"></p>
+
+<p align="center">
+<a href="https://github.com/maruthi-sreeram-p/online-medication-and-prescription-tracker"><b>Source code</b></a>
+</p>
+
 <details>
-<summary><b>04 &middot; medicare-tracker</b> &mdash; prescriptions and dose tracking</summary>
-**problem**
-Patients miss doses. MediCare gives doctors, patients, staff and admins role-based dashboards, prescriptions split into morning, afternoon and night slots, and a chatbot that reads the patient's prescription data.
- 
-**topology**
- 
-```text
-React :3000 --> Spring Boot :8321 --> MySQL :3306 (11 tables)
-                     '--> FastAPI :8000 --> Groq (Llama 3.1 8B)
- 
-auth: JWT + BCrypt     roles: doctor | patient | staff | admin
-```
- 
-**decision**
-Dose status (UPCOMING, PENDING, ON TIME, LATE, MISSED) is computed from the backend clock, not the client's.
- 
-**trade-off**
-The server clock becomes the source of truth, so time zones and clock drift have to be handled on the server.
- 
-**run**
- 
+<summary><b>Run MediCare Tracker</b> (three terminals, MySQL running first)</summary>
+
 ```bash
-# three terminals, MySQL running first
-mvn spring-boot:run                        # backend
-uvicorn main:app --reload --port 8000      # AI service
-npm install && npm start                   # frontend
+mvn spring-boot:run                        # backend, :8321
+uvicorn main:app --reload --port 8000      # AI service, :8000
+npm install && npm start                   # frontend, :3000
 ```
- 
-**verify**
-TODO add a request and response that shows a dose moving from PENDING to LATE.
- 
+
 </details>
----
- 
-## /labs
- 
-Practice labs, not products. Each one is a set of Spring Boot apps with planted bugs, built to practice root-cause analysis instead of symptom fixing.
- 
-| lab | what it trains | size | start |
-|-----|----------------|------|-------|
-| [java-debugging-playground](https://github.com/maruthi-sreeram-p/java-debugging-playground) | MVC, DI, JPA, transactions, security, JWT, Redis, Kafka, RabbitMQ | 20 graded projects, 133 planted defects | `cd 05-mysql-integration-debugging && docker compose up -d` |
-| [spring-boot-debugging-laboratory](https://github.com/maruthi-sreeram-p/spring-boot-debugging-laboratory) | Production-style bugs: locking, caching, messaging, auth, concurrency | 15 apps, difficulty 2/10 to 10/10 | `docker compose -f infra/docker-compose.yml up -d mysql redis` |
- 
-```text
-method:  reproduce first -> form a theory -> change one thing at a time
-log:     symptom -> hypothesis -> what ruled it out -> what confirmed it
-rule:    read the answer key last
+
+<!-- TODO(maruthi): add a "verify" line for MediCare, e.g. one request/response showing a dose moving from PENDING to LATE. -->
+
+<br>
+
+<p align="center"><img src="./assets/proj-4.svg" alt="Distributed key-value store on Raft: a leader copies each write to followers and a majority confirms it. When the leader crashes, a follower times out, becomes a candidate, wins a majority vote and becomes the new leader." width="100%"></p>
+
+<!-- TODO(maruthi): add the repo link and the one command that starts the cluster, then uncomment:
+
+<p align="center">
+<a href="https://github.com/maruthi-sreeram-p/REPO-NAME"><b>Source code</b></a>
+</p>
+
+<details>
+<summary><b>Run the 3-node cluster</b></summary>
+
+```bash
+# command that starts the cluster
+# steps: kill the leader, watch the election, confirm a write still replicates
 ```
- 
----
- 
-## /contact
- 
-| | |
-|---|---|
-| portfolio | [maruthi-sreeram.vercel.app](https://maruthi-sreeram.vercel.app/) |
-| linkedin | [maruthi-sreeram-b57680331](https://www.linkedin.com/in/maruthi-sreeram-b57680331/) |
-| leetcode | [PMaruthisreeram](https://leetcode.com/u/PMaruthisreeram/) |
-| github | [maruthi-sreeram-p](https://github.com/maruthi-sreeram-p) |
-| email | maruthisreeram864@gmail.com |
- 
-<sub>last updated 2026-10-11</sub>
- 
+
+</details>
+-->
+
+<br>
+
+<p align="center"><img src="./assets/h-04.svg" alt="04 Activity" width="100%"></p>
+
+<p align="center"><img src="./assets/activity.svg" alt="Commit activity heatmap for the last 26 weeks with my current streak, yearly total, busiest day and commits per month." width="100%"></p>
+
+<p align="center"><sub>Drawn from my real GitHub contributions and refreshed daily by a GitHub Action.</sub></p>
+
+<br>
+
+<p align="center"><img src="./assets/h-05.svg" alt="05 Debugging labs" width="100%"></p>
+
+<p align="center"><img src="./assets/labs.svg" alt="Two debugging labs. java-debugging-playground: 20 graded projects with 133 planted defects. spring-boot-debugging-laboratory: 15 Spring Boot apps from easy to brutal. Method: reproduce the bug, form a theory, change one thing, confirm the cause." width="100%"></p>
+
+<p align="center">
+<a href="https://github.com/maruthi-sreeram-p/java-debugging-playground"><b>java-debugging-playground</b></a>
+&nbsp;·&nbsp;
+<a href="https://github.com/maruthi-sreeram-p/spring-boot-debugging-laboratory"><b>spring-boot-debugging-laboratory</b></a>
+</p>
+
+<details>
+<summary><b>Start a lab</b></summary>
+
+```bash
+# java-debugging-playground (JDK 17+, Docker from project 05)
+cd 05-mysql-integration-debugging && docker compose up -d
+
+# spring-boot-debugging-laboratory
+docker compose -f infra/docker-compose.yml up -d mysql redis
+```
+
+</details>
+
+<br>
+
+<p align="center"><img src="./assets/h-06.svg" alt="06 Contact" width="100%"></p>
+
+<p align="center">
+<a href="https://maruthi-sreeram.vercel.app/"><img src="./assets/pill-portfolio.svg" alt="Portfolio" width="156"></a>
+<a href="https://www.linkedin.com/in/maruthi-sreeram-b57680331/"><img src="./assets/pill-linkedin.svg" alt="LinkedIn" width="156"></a>
+<a href="https://leetcode.com/u/PMaruthisreeram/"><img src="./assets/pill-leetcode.svg" alt="LeetCode" width="156"></a>
+<a href="https://github.com/maruthi-sreeram-p"><img src="./assets/pill-github.svg" alt="GitHub" width="156"></a>
+<a href="mailto:maruthisreeram864@gmail.com"><img src="./assets/pill-email.svg" alt="Email" width="156"></a>
+</p>
+
+<p align="center"><img src="./assets/footer.svg" alt="Understand the system. Build it. Break it. Improve it." width="100%"></p>

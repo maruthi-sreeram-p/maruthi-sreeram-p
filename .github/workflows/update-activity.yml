@@ -1,0 +1,34 @@
+# Refreshes the commit heatmap (assets/activity.svg) and the streak number in the hero
+# and About cards once a day. It reads the same public contribution calendar that
+# github.com shows on your profile, so it needs no token.
+name: Update commit activity
+
+on:
+  schedule:
+    - cron: "17 3 * * *"   # every day, 03:17 UTC
+  workflow_dispatch: {}     # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild activity.svg and sync the streak
+        run: python scripts/gen_activity.py --login maruthi-sreeram-p --out assets/activity.svg --assets assets
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/activity.svg assets/hero.svg assets/about.svg
+          git commit -m "chore: refresh commit activity"
+          git push
