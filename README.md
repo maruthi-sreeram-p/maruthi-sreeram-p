@@ -1,367 +1,226 @@
-<p align="center">
-  <img src="./assets/animated-hero.svg" width="100%" alt="Animated Maruthi Sreeram hero" />
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=850&color=8B5CF6&center=true&vCenter=true&width=920&lines=Java+Backend+Developer;Spring+Boot+%7C+Microservices;Distributed+Systems+Enthusiast;Building+Scalable+Applications;AI+%26+Backend+Engineering" alt="Typing animation" />
-</p>
-
-<p align="center"><sub>SYSTEMS • BACKEND • DISTRIBUTED ARCHITECTURE • AI</sub></p>
-
-<p align="center">
-  <a href="https://maruthi-sreeram.vercel.app/"><img src="https://img.shields.io/badge/PORTFOLIO-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/maruthi-sreeram-b57680331/"><img src="https://img.shields.io/badge/LINKEDIN-8B5CF6?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-  <a href="mailto:maruthisreeram864@gmail.com"><img src="https://img.shields.io/badge/GMAIL-F59E0B?style=for-the-badge&logo=gmail&logoColor=white"></a>
-  <a href="https://github.com/maruthi-sreeram-p"><img src="https://img.shields.io/badge/GITHUB-8B5CF6?style=for-the-badge&logo=github&logoColor=white"></a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=maruthi-sreeram-p&label=PROFILE+VIEWS&color=8B5CF6&style=flat-square">
-  <img src="https://img.shields.io/github/followers/maruthi-sreeram-p?label=FOLLOWERS&style=flat-square&color=8B5CF6">
-  <img src="https://img.shields.io/github/stars/maruthi-sreeram-p?affiliations=OWNER&label=STARS&style=flat-square&color=F59E0B">
-</p>
-
-<hr>
-
-<h2 align="center">01 // About Me</h2>
-
-<table align="center">
-<tr>
-<td width="50%" valign="top">
-
-<p><b>public class MaruthiSreeram {</b></p>
-
-<p>
-<code>String role = "Java Backend Developer ";</code><br>
-<code>String education = "B.Tech Computer Science · Class of 2027";</code>
-</p>
-
-<p>
-<code>focus = [Backend Engineering, Distributed Systems, Microservices, Event-Driven Architecture, AI Integration]</code>
-</p>
-
-<p>
-<code>stack = [Java, Spring Boot, Spring AI, Kafka, RabbitMQ, Redis, MySQL, PostgreSQL, Docker]</code>
-</p>
-
-<p>
-<code>learning = "Distributed Systems, System Design &amp; Scalable Backend Architecture";</code><br>
-<code>building = "Production-oriented backend systems and AI-powered applications";</code><br>
-<code>goal = "Java Backend Engineer / Software Development Engineer";</code><br>
-<code>principle = "Understand the system. Build it. Break it. Improve it.";</code>
-</p>
-
-<p><b>}</b></p>
-
-</td>
-
-<td width="50%" valign="top">
-
-<h3 align="center">ENGINEERING MINDSET</h3>
-
-<p>
-I enjoy understanding what happens behind an API rather than treating frameworks as black boxes. My current engineering direction is centered around Java backend development, Spring Boot, distributed systems, event-driven architectures and practical AI integration.
-</p>
-
-<p>
-I build projects to explore real engineering problems: authentication, data persistence, asynchronous processing, caching, service communication, fault tolerance, retrieval systems and scalable application design.
-</p>
-
-</td>
-</tr>
-</table>
-
-<hr>
-
-<h2 align="center">02 // Technical Stack</h2>
-
-<table align="center">
-<tr>
-<td align="center" width="50%">
-<b>Languages</b><br><br>
-<img src="https://skillicons.dev/icons?i=java,python,javascript" height="44"><br>
-<sub>Java · Python · JavaScript</sub>
-</td>
-
-<td align="center" width="50%">
-<b>Backend Engineering</b><br><br>
-<img src="https://skillicons.dev/icons?i=java,spring,hibernate,maven" height="44"><br>
-<sub>Spring Boot · Hibernate · Spring Data · Maven</sub>
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<b>Databases &amp; Caching</b><br><br>
-<img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" height="44"><br>
-<sub>MySQL · PostgreSQL · MongoDB · Redis</sub>
-</td>
-
-<td align="center">
-<b>Messaging &amp; Streaming</b><br><br>
-<img src="https://skillicons.dev/icons?i=kafka,rabbitmq" height="44"><br>
-<sub>Kafka · RabbitMQ · Event-driven systems</sub>
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<b>DevOps &amp; Engineering Tools</b><br><br>
-<img src="https://skillicons.dev/icons?i=docker,git,github,postman,linux" height="44"><br>
-<sub>Docker · Git · GitHub · Postman · Linux</sub>
-</td>
-
-<td align="center">
-<b>Frontend &amp; Development</b><br><br>
-<img src="https://skillicons.dev/icons?i=react,html,css,idea,vscode" height="44"><br>
-<sub>React · HTML · CSS · IntelliJ IDEA · VS Code</sub>
-</td>
-</tr>
-</table>
-
-<hr>
-
-<h2 align="center">03 // Engineering Focus</h2>
-
-<p align="center">
-<img src="https://img.shields.io/badge/JAVA_BACKEND-8B5CF6?style=for-the-badge&logo=openjdk&logoColor=white">
-<img src="https://img.shields.io/badge/SPRING_BOOT-8B5CF6?style=for-the-badge&logo=springboot&logoColor=white">
-<img src="https://img.shields.io/badge/MICROSERVICES-111827?style=for-the-badge">
-<img src="https://img.shields.io/badge/DISTRIBUTED_SYSTEMS-111827?style=for-the-badge">
-<img src="https://img.shields.io/badge/EVENT_DRIVEN-F59E0B?style=for-the-badge">
-<img src="https://img.shields.io/badge/AI_INTEGRATION-F59E0B?style=for-the-badge">
-</p>
-
-<table align="center">
-<tr>
-<td width="33%" align="center">
-<b>Backend Systems</b><br><br>
-REST APIs, authentication, persistence, service-layer design and clean architecture.
-</td>
-
-<td width="33%" align="center">
-<b>Distributed Systems</b><br><br>
-Consensus, replication, concurrency, messaging, caching and fault tolerance.
-</td>
-
-<td width="33%" align="center">
-<b>AI Engineering</b><br><br>
-Spring AI, retrieval, contextual assistants and AI-assisted application workflows.
-</td>
-</tr>
-</table>
-
-<p align="center">
-Building scalable backend systems with a focus on
-<strong>correctness, maintainability, reliability and practical engineering trade-offs.</strong>
-</p>
-
-<hr>
-
-<h2 align="center">04 // System Architecture</h2>
-
-<p align="center">
-<img src="./assets/animated-architecture.svg" width="100%" alt="Animated system architecture">
-</p>
-
-<hr>
-
-<h2 align="center">05 // Featured Projects</h2>
-
-<p align="center">
-<sub>Projects built to explore backend engineering, distributed systems, event-driven architectures and AI-powered applications.</sub>
-</p>
-
-<table align="center">
-
-<tr>
-<td width="50%" valign="top">
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/medcare-nexus-ai">
-<img src="https://res.cloudinary.com/dgm6ok2cn/image/upload/v1786085484/ChatGPT_Image_Aug_7_2026_12_11_36_PM_clmesq.png" width="100%" alt="Nexus AI">
-</a>
-</p>
-
-<h3 align="center">Nexus AI</h3>
-
-<p>AI-powered assistant integrated into a healthcare platform, designed around contextual conversations, intelligent retrieval and workflow-oriented assistance.</p>
-
-<ul>
-<li>Context-aware AI conversations</li>
-<li>Retrieval-oriented workflows</li>
-<li>Spring AI integration</li>
-<li>Backend-driven AI features</li>
-</ul>
-
-<p><b>Tech:</b> Java · Spring Boot · Spring AI · React</p>
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/medcare-nexus-ai">
-<img src="https://img.shields.io/badge/SOURCE_CODE-8B5CF6?style=for-the-badge&logo=github&logoColor=white">
-</a>
-</p>
-
-</td>
-
-<td width="50%" valign="top">
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/online-medication-and-prescription-tracker">
-<img src="https://res.cloudinary.com/dgm6ok2cn/image/upload/v1786085483/ChatGPT_Image_Aug_7_2026_12_11_23_PM_rgagyp.png" width="100%" alt="Online Medication and Prescription Tracker">
-</a>
-</p>
-
-<h3 align="center">Online Medication &amp; Prescription Tracker</h3>
-
-<p>Full-stack healthcare platform for managing prescriptions, medicine reminders and role-based workflows for patients and doctors.</p>
-
-<ul>
-<li>JWT authentication</li>
-<li>Role-based dashboards</li>
-<li>Prescription management</li>
-<li>AI-assisted recommendations</li>
-</ul>
-
-<p><b>Tech:</b> Java · Spring Boot · React · MySQL · JWT</p>
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/online-medication-and-prescription-tracker">
-<img src="https://img.shields.io/badge/SOURCE_CODE-8B5CF6?style=for-the-badge&logo=github&logoColor=white">
-</a>
-</p>
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-<p align="center">
-<img src="https://res.cloudinary.com/dgm6ok2cn/image/upload/v1786085483/ChatGPT_Image_Aug_7_2026_12_14_34_PM_lm8zek.png" width="100%" alt="IPL Live Cricket Dashboard">
-</p>
-
-<h3 align="center">IPL Live Cricket Dashboard</h3>
-
-<p>Real-time cricket dashboard exploring event-driven architecture, streaming pipelines and fast data access for live match information.</p>
-
-<ul>
-<li>Kafka-based event streaming</li>
-<li>Redis caching</li>
-<li>Real-time updates</li>
-<li>Analytics-oriented backend</li>
-</ul>
-
-<p><b>Tech:</b> Java · Spring Boot · Kafka · Redis · MySQL</p>
-
-</td>
-
-<td width="50%" valign="top">
-
-<p align="center">
-<img src="https://res.cloudinary.com/dgm6ok2cn/image/upload/v1786085483/ChatGPT_Image_Aug_7_2026_12_15_42_PM_rfhtqi.png" width="100%" alt="Distributed Key-Value Store using Raft">
-</p>
-
-<h3 align="center">Distributed Key-Value Store using Raft</h3>
-
-<p>A systems-oriented project exploring consensus, leader election and replicated state across multiple nodes.</p>
-
-<ul>
-<li>Raft consensus algorithm</li>
-<li>Leader election</li>
-<li>Log replication</li>
-<li>Concurrency and fault tolerance</li>
-</ul>
-
-<p><b>Tech:</b> Java · Raft · Sockets · Concurrency</p>
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/enterprise-ai-knowledge-model">
-<img src="https://res.cloudinary.com/dgm6ok2cn/image/upload/v1786085483/ChatGPT_Image_Aug_7_2026_12_17_34_PM_tpczw0.png" width="100%" alt="Enterprise Knowledge Model">
-</a>
-</p>
-
-<h3 align="center">Enterprise Knowledge Model</h3>
-
-<p>AI-oriented knowledge platform focused on document ingestion, semantic retrieval and intelligent access to enterprise information.</p>
-
-<ul>
-<li>Document ingestion</li>
-<li>Semantic search</li>
-<li>AI-powered retrieval</li>
-<li>Enterprise knowledge workflows</li>
-</ul>
-
-<p><b>Tech:</b> Java · Spring Boot · Spring AI · PostgreSQL · Redis · Kafka</p>
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p/enterprise-ai-knowledge-model">
-<img src="https://img.shields.io/badge/SOURCE_CODE-8B5CF6?style=for-the-badge&logo=github&logoColor=white">
-</a>
-</p>
-
-</td>
-
-<td width="50%" valign="top">
-
-<h3 align="center">More Backend Work</h3>
-
-<p>A growing collection of backend experiments covering database access, debugging, financial data processing, real-time processing and application architecture.</p>
-
-<ul>
-<li>JDBC and database systems</li>
-<li>Real-time order processing</li>
-<li>Finance data processing</li>
-<li>Java debugging and problem solving</li>
-</ul>
-
-<p><b>Direction:</b> Java · Spring Boot · SQL · Distributed Systems</p>
-
-<p align="center">
-<a href="https://github.com/maruthi-sreeram-p?tab=repositories">
-<img src="https://img.shields.io/badge/VIEW_ALL_REPOSITORIES-F59E0B?style=for-the-badge&logo=github&logoColor=white">
-</a>
-</p>
-
-</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h2 align="center">06 // GitHub Analytics</h2>
-
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=maruthi-sreeram-p&bg_color=050816&color=8B5CF6&line=8B5CF6&point=F59E0B&area=true&hide_border=true" width="100%" alt="GitHub contribution graph">
-</p>
-
-<p align="center">
-<img src="./assets/animated-activity.svg" width="100%" alt="Animated engineering activity dashboard">
-</p>
-
-<hr>
-
-<h2 align="center">07 // Connect With Me</h2>
-
-<p align="center">
-<a href="https://www.linkedin.com/in/maruthi-sreeram-b57680331/"><img src="https://img.shields.io/badge/LINKEDIN-8B5CF6?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-<a href="mailto:maruthisreeram864@gmail.com"><img src="https://img.shields.io/badge/GMAIL-F59E0B?style=for-the-badge&logo=gmail&logoColor=white"></a>
-<a href="https://github.com/maruthi-sreeram-p"><img src="https://img.shields.io/badge/GITHUB-8B5CF6?style=for-the-badge&logo=github&logoColor=white"></a>
-<a href="https://leetcode.com/u/PMaruthisreeram/"><img src="https://img.shields.io/badge/LEETCODE-F59E0B?style=for-the-badge&logo=leetcode&logoColor=black"></a>
-<a href="https://maruthi-sreeram.vercel.app/"><img src="https://img.shields.io/badge/PORTFOLIO-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white"></a>
-</p>
-
-<p align="center">
-<strong>Building scalable systems. Learning deeply. Engineering with purpose.</strong>
-</p>
-
-<p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:111827,100:050816&height=120&section=footer" width="100%" alt="Footer">
-</p>
+# Maruthi Sreeram
+ 
+Java backend engineer in progress. I build systems, break them on purpose, and write down what failed.
+ 
+```diff
++ target:  Java Backend Engineer / Software Development Engineer
++ streak:  38 consecutive commit days (Sep 4 - Oct 11, 2026)
+```
+ 
+---
+ 
+## /whoami
+ 
+```yaml
+name:      Maruthi Sreeram
+role:      Java Backend Developer
+education: B.Tech Computer Science, class of 2027
+focus:     [backend engineering, distributed systems, microservices, event-driven architecture, AI integration]
+ 
+stack:
+  language:   [Java, Python, JavaScript, TypeScript]
+  backend:    [Spring Boot, Spring Security, Spring Data JPA, Hibernate, Spring AI, Maven]
+  data:       [MySQL, PostgreSQL, MongoDB, Redis]
+  messaging:  [Kafka, RabbitMQ]
+  tooling:    [Docker, Git, Postman, Linux, IntelliJ IDEA]
+  frontend:   [React, Vite]
+ 
+learning:  distributed systems, system design, scalable backend architecture
+principle: "Understand the system. Build it. Break it. Improve it."
+```
+ 
+---
+ 
+## /registry
+ 
+Four services, ordered by how hard they were to get right. Bars show relative difficulty.
+ 
+```text
+distributed-kv-store   ##########  consensus has to stay correct while nodes fail
+careerflux             #########.  widest system: 12 backend modules, ingestion to matching
+nexus-ai               ########..  four roles, stock forecasting, an LLM with hard safety limits
+medicare-tracker       ######....  three services, role-based JWT, server-side dose logic
+```
+ 
+| # | service | why it ranks here | stack | source |
+|---|---------|-------------------|-------|--------|
+| 1 | distributed-kv-store | Leader election, replicated logs and quorum commits must hold under node failure | Java, Spring Boot, Raft | TODO add repo link |
+| 2 | careerflux | Source intelligence, job ingestion with dedup, deterministic matching, security, migrations | Spring Boot, React, PostgreSQL, Kafka (optional), Spring AI | [careerFlux](https://github.com/maruthi-sreeram-p/careerFlux) |
+| 3 | nexus-ai | Four role-based workflows plus an AI layer that may explain prescriptions but never prescribe | Spring Boot 3, Spring Security, JWT, React, Gemini | [medcare-nexus-ai](https://github.com/maruthi-sreeram-p/medcare-nexus-ai) |
+| 4 | medicare-tracker | Prescription slots, dose status computed on the server, a separate AI service | Spring Boot, MySQL, React, FastAPI | [online-medication-and-prescription-tracker](https://github.com/maruthi-sreeram-p/online-medication-and-prescription-tracker) |
+ 
+---
+ 
+## /services
+ 
+<details open>
+<summary><b>01 &middot; distributed-kv-store</b> &mdash; consensus under failure</summary>
+**problem**
+A single-node store loses data when it crashes. This one replicates every write across nodes and keeps serving when a node dies.
+ 
+**topology** (3-node example)
+ 
+```text
+client --> leader --append--> log
+              |-----------> follower A --ack-->|
+              |-----------> follower B --ack-->|
+          majority ack  =>  commit  =>  apply to store
+ 
+leader stops sending heartbeats  =>  follower times out  =>  election  =>  new leader
+```
+ 
+**decision**
+A write is acknowledged only after a majority of nodes have it (quorum commit).
+ 
+**trade-off**
+No majority, no progress. The store favors consistency over availability, so a partitioned minority stops accepting writes.
+ 
+**run**
+ 
+```bash
+# TODO add the command that starts the cluster
+```
+ 
+**verify**
+ 
+```text
+# TODO add the steps: kill the leader, show the election, show a write still replicating
+```
+ 
+</details>
+<details>
+<summary><b>02 &middot; careerflux</b> &mdash; widest system</summary>
+**problem**
+Job seekers cannot tell which employers matter for a target career, whether those sources may be read, or why a role fits. CareerFlux finds the sources, checks access policy, monitors them for change, and explains every match.
+ 
+**topology**
+ 
+```text
+ATS sources --> ingestion --> normalize --> dedupe --> enrich --> jobs
+                (optional Kafka bus)                                |
+resume --> AI extract --> proposals --> human review --> profile ---+
+                                                                    v
+                                    deterministic matcher (5 weighted sub-scores)
+                                                                    v
+                                         ranked jobs + strengths + gaps
+```
+ 
+**decision**
+AI proposes, humans decide. Matching and eligibility stay in deterministic Java. AI is optional and falls back to rule-based logic when it is off.
+ 
+**trade-off**
+A rule-based matcher adapts less than a learned ranker. In return, every score is explainable and testable.
+ 
+**run**
+ 
+```bash
+export CAREERFLUX_JWT_SECRET="$(openssl rand -base64 48)"
+cd backend  && mvn spring-boot:run -Dspring-boot.run.profiles=dev,demo   # :8080
+cd frontend && npm install && npm run dev                                # :5173
+```
+ 
+**verify**
+ 
+```bash
+cd backend && mvn test
+```
+ 
+Design notes: `docs/architecture.md`
+ 
+</details>
+<details>
+<summary><b>03 &middot; nexus-ai</b> &mdash; role-based healthcare platform with a guarded AI layer</summary>
+**problem**
+Medication adherence, prescriptions and pharmacy stock live in separate places, and AI help in healthcare needs hard limits. Nexus AI covers physicians, patients, pharmacy staff and admins in one platform, in six languages.
+ 
+**topology**
+ 
+```text
+React (Redux, MUI) --> Spring Boot (Spring Security 6, JWT)
+                           |-- JPA / Hibernate --> H2 | MySQL
+                           '-- GeminiAiService --> Google Gemini API
+ 
+roles: physician | patient | pharmacy | admin
+```
+ 
+**decision**
+The AI explains existing prescriptions only. It does not diagnose new conditions or change dosages.
+ 
+**trade-off**
+A narrower assistant than an open-ended chatbot, in exchange for safe behavior in a medical setting.
+ 
+**run**
+ 
+```bash
+cd backend  && mvn spring-boot:run     # :8088, Swagger UI at /swagger-ui.html
+cd frontend && npm install && npm run dev   # :3000
+```
+ 
+**verify**
+Open `http://localhost:8088/swagger-ui.html` and call the same endpoint as two different roles.
+ 
+</details>
+<details>
+<summary><b>04 &middot; medicare-tracker</b> &mdash; prescriptions and dose tracking</summary>
+**problem**
+Patients miss doses. MediCare gives doctors, patients, staff and admins role-based dashboards, prescriptions split into morning, afternoon and night slots, and a chatbot that reads the patient's prescription data.
+ 
+**topology**
+ 
+```text
+React :3000 --> Spring Boot :8321 --> MySQL :3306 (11 tables)
+                     '--> FastAPI :8000 --> Groq (Llama 3.1 8B)
+ 
+auth: JWT + BCrypt     roles: doctor | patient | staff | admin
+```
+ 
+**decision**
+Dose status (UPCOMING, PENDING, ON TIME, LATE, MISSED) is computed from the backend clock, not the client's.
+ 
+**trade-off**
+The server clock becomes the source of truth, so time zones and clock drift have to be handled on the server.
+ 
+**run**
+ 
+```bash
+# three terminals, MySQL running first
+mvn spring-boot:run                        # backend
+uvicorn main:app --reload --port 8000      # AI service
+npm install && npm start                   # frontend
+```
+ 
+**verify**
+TODO add a request and response that shows a dose moving from PENDING to LATE.
+ 
+</details>
+---
+ 
+## /labs
+ 
+Practice labs, not products. Each one is a set of Spring Boot apps with planted bugs, built to practice root-cause analysis instead of symptom fixing.
+ 
+| lab | what it trains | size | start |
+|-----|----------------|------|-------|
+| [java-debugging-playground](https://github.com/maruthi-sreeram-p/java-debugging-playground) | MVC, DI, JPA, transactions, security, JWT, Redis, Kafka, RabbitMQ | 20 graded projects, 133 planted defects | `cd 05-mysql-integration-debugging && docker compose up -d` |
+| [spring-boot-debugging-laboratory](https://github.com/maruthi-sreeram-p/spring-boot-debugging-laboratory) | Production-style bugs: locking, caching, messaging, auth, concurrency | 15 apps, difficulty 2/10 to 10/10 | `docker compose -f infra/docker-compose.yml up -d mysql redis` |
+ 
+```text
+method:  reproduce first -> form a theory -> change one thing at a time
+log:     symptom -> hypothesis -> what ruled it out -> what confirmed it
+rule:    read the answer key last
+```
+ 
+---
+ 
+## /contact
+ 
+| | |
+|---|---|
+| portfolio | [maruthi-sreeram.vercel.app](https://maruthi-sreeram.vercel.app/) |
+| linkedin | [maruthi-sreeram-b57680331](https://www.linkedin.com/in/maruthi-sreeram-b57680331/) |
+| leetcode | [PMaruthisreeram](https://leetcode.com/u/PMaruthisreeram/) |
+| github | [maruthi-sreeram-p](https://github.com/maruthi-sreeram-p) |
+| email | maruthisreeram864@gmail.com |
+ 
+<sub>last updated 2026-10-11</sub>
+ 
