@@ -63,8 +63,11 @@ def parse_calendar(html):
 
 
 def fetch_calendar(login):
-    req = urllib.request.Request(f"https://github.com/users/{login}/contributions",
-                                 headers={"User-Agent": "profile-readme-activity"})
+    import time
+    # cache-buster + no-cache headers so a CDN can never hand back yesterday's calendar
+    req = urllib.request.Request(f"https://github.com/users/{login}/contributions?_={int(time.time())}",
+                                 headers={"User-Agent": "profile-readme-activity", "Accept": "text/html",
+                                          "Cache-Control": "no-cache", "Pragma": "no-cache"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return parse_calendar(r.read().decode("utf-8"))
 
