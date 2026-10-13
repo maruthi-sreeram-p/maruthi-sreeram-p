@@ -1,0 +1,48 @@
+# Keeps the commit heatmap (assets/activity.svg) and the streak number in the hero and
+# About cards current with no manual work. It reads the same public contribution calendar
+# that github.com shows on your profile, so it needs no token or secret.
+#
+# Runs: every 10 minutes, right after you push this file (or the script), and on demand
+# from the Actions tab. It only commits when the numbers actually changed, so most runs
+# finish with "No change" and leave no trace in your history.
+name: Update commit activity
+
+on:
+  schedule:
+    # Every 10 minutes. Minutes are offset from :00 because GitHub is busiest at the top of
+    # the hour and delays or drops runs scheduled then.
+    - cron: "3,13,23,33,43,53 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/update-activity.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-activity
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild activity.svg and sync the streak
+        run: python3 scripts/gen_activity.py --login maruthi-sreeram-p --out assets/activity.svg --assets assets
+      - name: Commit only if something changed
+        run: |
+          if git diff --quiet; then
+            echo "No change"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/activity.svg assets/hero.svg assets/about.svg
+          git commit -m "chore: refresh commit activity"
+          git pull --rebase origin main
+          git push
