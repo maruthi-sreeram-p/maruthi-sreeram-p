@@ -24,7 +24,7 @@
 <text x="252" y="92" font-family="Inter, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="500" fill="#98A4BD" text-anchor="start" >across two debugging labs</text>
 <rect x="460.5" y="0.5" width="209" height="103" rx="14" fill="#120B0A" stroke="#4A2616" />
 <text x="482" y="28" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="600" fill="#FF6B35" text-anchor="start" letter-spacing="1.6" >COMMIT STREAK</text>
-<!--streak-num--><g fill="#FF6B35" filter="url(#glowS)"><path transform="translate(481 71) scale(0.42)" d="M38.5 -72.8H20.7L4.4 -61.6V-46.5L20.8 -57.8H21.3V0H38.5Z"/></g><!--/streak-num-->
+<!--streak-num--><g fill="#FF6B35" filter="url(#glowS)"><path transform="translate(481 71) scale(0.42)" d="M5.4 0H59V-13.9H29.3V-14.4L38.4 -22.8C54.1 -36.5 58.1 -43.5 58.1 -51.8C58.1 -64.8 47.5 -73.7 31.1 -73.7C15.1 -73.7 4.4 -64.5 4.4 -49.8H20.8C20.8 -56.3 24.9 -60.2 31.1 -60.2C37.1 -60.2 41.4 -56.5 41.4 -50.5C41.4 -45 37.9 -41.2 31.9 -35.7L5.4 -12.4Z"/></g><!--/streak-num-->
 <!--streak-sub--><text x="482" y="92" font-family="Inter, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="500" fill="#98A4BD" text-anchor="start">days in a row, since Oct 30</text><!--/streak-sub-->
 <circle cx="646" cy="26" r="4" fill="#FF6B35" filter="url(#glowS)"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
 <rect x="690.5" y="0.5" width="209" height="103" rx="14" fill="url(#gCard)" stroke="#16203A" />
