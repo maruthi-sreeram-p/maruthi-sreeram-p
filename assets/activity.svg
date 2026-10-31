@@ -209,6 +209,7 @@
 <rect x="837.5" y="148.5" width="17" height="17" rx="4" fill="#0D1526"/>
 <rect x="837.5" y="170" width="17" height="17" rx="4" fill="#0D1526"/>
 <rect x="837.5" y="191.5" width="17" height="17" rx="4" fill="#9AD0FF" stroke="#FF6B35" stroke-opacity=".5" stroke-width="1.1"><animate attributeName="stroke-opacity" values=".5;1;.5;.5" keyTimes="0;0.04;0.08;1" dur="9s" repeatCount="indefinite"/><animate attributeName="stroke-width" values="1.1;2.2;1.1;1.1" keyTimes="0;0.04;0.08;1" dur="9s" repeatCount="indefinite"/></rect>
+<rect x="837.5" y="213" width="17" height="17" rx="4" fill="#0D1526"/>
 <text x="386" y="72" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="500" fill="#5F6C8A" text-anchor="start">Jun</text>
 <text x="472" y="72" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="500" fill="#5F6C8A" text-anchor="start">Jul</text>
 <text x="558" y="72" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="500" fill="#5F6C8A" text-anchor="start">Aug</text>
