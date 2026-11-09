@@ -3,7 +3,7 @@
     python gen_activity.py --login maruthi-sreeram-p --out assets/activity.svg
     python gen_activity.py --json contrib.json --end 2026-10-11 --login maruthi-sreeram-p --out activity.svg   # offline
 """
-import argparse, datetime as dt, re, json, sys, urllib.request
+import argparse, datetime as dt, re, json, sys, time, urllib.error, urllib.request
 from collections import Counter
 from html import escape
 # Inter ExtraBold digits, outlined at 100px (baseline y=0). Generated.
@@ -63,13 +63,33 @@ def parse_calendar(html):
 
 
 def fetch_calendar(login):
-    import time
-    # cache-buster + no-cache headers so a CDN can never hand back yesterday's calendar
-    req = urllib.request.Request(f"https://github.com/users/{login}/contributions?_={int(time.time())}",
-                                 headers={"User-Agent": "profile-readme-activity", "Accept": "text/html",
-                                          "Cache-Control": "no-cache", "Pragma": "no-cache"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return parse_calendar(r.read().decode("utf-8"))
+    """Fetch the public calendar, retrying transient GitHub/CDN failures."""
+    # Scheduled workflows occasionally receive a 5xx response from GitHub's
+    # contributions endpoint. Retrying avoids turning a short outage into a
+    # failed workflow while still surfacing persistent or client-side errors.
+    retryable = {429, 500, 502, 503, 504}
+    attempts = 4
+    for attempt in range(attempts):
+        # Cache-buster + no-cache headers so a CDN can never hand back yesterday's calendar.
+        req = urllib.request.Request(
+            f"https://github.com/users/{login}/contributions?_={int(time.time())}",
+            headers={"User-Agent": "profile-readme-activity", "Accept": "text/html",
+                     "Cache-Control": "no-cache", "Pragma": "no-cache"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return parse_calendar(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            if exc.code not in retryable or attempt == attempts - 1:
+                raise
+            delay = 2 ** attempt
+            print(f"GitHub returned HTTP {exc.code}; retrying in {delay}s...", file=sys.stderr)
+        except urllib.error.URLError as exc:
+            if attempt == attempts - 1:
+                raise
+            delay = 2 ** attempt
+            print(f"GitHub request failed ({exc.reason}); retrying in {delay}s...", file=sys.stderr)
+        time.sleep(delay)
 
 
 def compute_streak(counts, end):
